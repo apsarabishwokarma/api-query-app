@@ -1,6 +1,15 @@
+"use client";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryclient = new QueryClient();
+const queryclient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+    },
+  },
+});
+
 export default function TanStackQueryProvider({
   children,
 }: {

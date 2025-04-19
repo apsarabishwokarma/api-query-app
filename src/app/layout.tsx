@@ -1,4 +1,6 @@
-import TanStackQueryProvider from "./config/TanStackQueryProvider";
+import { Toaster } from "@/components/ui/sonner";
+import TanStackQueryProvider from "../config/TanStackQueryProvider";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -7,9 +9,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <TanStackQueryProvider>
-        <body>{children}</body>
-      </TanStackQueryProvider>
+      <body>
+        <TanStackQueryProvider>
+          <Toaster richColors position="top-right" theme="light" />
+          {children}
+        </TanStackQueryProvider>
+      </body>
     </html>
   );
 }
